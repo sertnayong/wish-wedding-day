@@ -1,11 +1,20 @@
+"use client";
+import { useActiveSectionContext } from "@/containers/active-section";
+import { useSectionInView } from "../lib/useInView";
 import Image from "next/image";
 import React from "react";
 
-const intro = () => {
+export default function intro  () {
+  const { ref } = useSectionInView("#home", 0.5);
+  //const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
-    <section className="mb-28 max-w-[74rem] text-center sm:mb-0">
+    <section
+      ref={ref}
+      id="home"
+      className="mb-28 max-w-[74rem] text-center sm:mb-0"
+    >
       <div className="flex items-center justify-center">
-        <div className="relative">
+        <div>
           <div>
             <Image
               src="/boy.png"
@@ -17,7 +26,6 @@ const intro = () => {
               className="rounded-full shadow-xl object-cover"
             />
           </div>
-          <span className="text-6xl absolute bottom-8 right-12">00</span>
         </div>
       </div>
       <h1 className="mb-10 mt-5 text-4xl sm:text-6xl">
@@ -28,4 +36,3 @@ const intro = () => {
   );
 };
 
-export default intro;
