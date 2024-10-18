@@ -4,8 +4,9 @@ import HamburgerMenu from "./hamburger-menu";
 import Header from "./header";
 
 export default function Navbar() {
+  
   return <nav>
     <HamburgerMenu links={links}/>
-    <Header/>
+    <Header links={links}/>
   </nav>;
 }

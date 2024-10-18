@@ -6,19 +6,23 @@ export const links: Link[] = [
     hash: "#home",
 },
 {
-    nameEng: "About",
-    hash: "#about",
+    nameEng: "Invitations",
+    hash: "#invitations",
 },
 {
-    nameEng: "Projects",
-    hash: "#projects",
+    nameEng: "Itinerary",
+    hash: "#itinerary",
 },
 {
-    nameEng: "Skills",
-    hash: "#skills",
+    nameEng: "Gallery",
+    hash: "#gallery",
 },
 {
-    nameEng: "Contact",
-    hash: "#contact",
+    nameEng: "Blessing",
+    hash: "#blessing",
+},
+{
+    nameEng: "Venue",
+    hash: "#venue",
 },
 ]

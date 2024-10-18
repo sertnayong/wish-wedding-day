@@ -3,6 +3,8 @@ import { Hurricane } from "next/font/google";
 import "./globals.css";
 import Providers from "@/containers/providers";
 import Navbar from "@/components/navbar";
+import ThemeSwitch from "@/components/theme-controller";
+
 
 const hurricane = Hurricane({
   subsets: ["latin"],
@@ -38,8 +40,11 @@ export default function RootLayout({
         dark:bg-[#976394]`"
         ></div>
         <Providers>
-          <Navbar/>
-          {children}</Providers>
+          <Navbar />
+          
+          {children}
+          <ThemeSwitch/>
+        </Providers>
       </body>
     </html>
   );
