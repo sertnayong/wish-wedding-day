@@ -27,52 +27,41 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
   };
 
   return (
-    <div className="md:hidden top-5 right-5 fixed w-60 z-[999] flex flex-col items-end gap-2">
-      <motion.button
-        variants={menuTrigger}
-        initial="visible"
-        whileTap="tap"
-        whileHover="hover"
-        className="bg-white w-[3rem] drop-shadow backdrop-blur-[0.5rem] border-slate-500 dark:border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center dark:bg-gray-950"
-      >
-        <Hamburger toggled={isOpen} toggle={setIsOpen} size={20} />
-      </motion.button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            variants={menuList}
-            initial="start"
-            animate="visible"
-            className="w-full bg-white drop-shadow-sm border border-slate-500 dark:border-white border-opacity-60 shadow-2xl rounded-2xl flex flex-col items-center justify-center dark:bg-gray-950"
+    <motion.div className="md:hidden fixed bottom-0 z-[999] w-full :bottom-0 p-1 rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-black/[0..3] backdrop-blur-[0.5rem] sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75">
+    <ul className="flex flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500">
+      {links.map((link) => (
+        <motion.li
+          className="flex items-center justify-center relative"
+          key={link.hash}
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
+          <NextLink
+            className={clsx(
+              "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
+              {
+                "text-gray-950 dark:text-gray-200":
+                  activeSection === link.hash,
+              }
+            )}
+            href={link.hash}
+            onClick={() => {
+              setActiveSection(link.hash);
+              setTimeOfLastClick(Date.now());
+            }}
           >
-            {links.map((link, index) => (
-              <motion.div
-                className="w-full"
-                key={link.hash}
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-              >
-                <NextLink
-                  className={clsx(
-                    "flex w-full items-center justify-center px-3 py-2 hover:text-gray-950 transition dark:text-gray-500 dark:hover-gray-300 cursor-pointer",
-                    {
-                      "text-gray-950 bg-slate-200 dark:text-gray-200 dark:bg-gray-700 rounded":
-                        activeSection === link.hash,
-                      "rounded-t-xl": index === 0,
-                      "rounded-b-xl": index === links.length - 1,
-                    }
-                  )}
-                  href={link.hash}
-                  onClick={() => {setActiveSection(link.hash); setTimeOfLastClick(Date.now())}}
-                >
-                  {link.nameEng}
-                </NextLink>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+            {link.nameEng}
+            {link.hash === activeSection && (
+              <motion.span
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                layoutId="activeSection"
+              ></motion.span>
+            )}
+          </NextLink>
+        </motion.li>
+      ))}
+    </ul>
+  </motion.div>
   );
 };
 
