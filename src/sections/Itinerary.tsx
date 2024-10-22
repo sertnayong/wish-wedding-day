@@ -7,7 +7,9 @@ import Image from "next/image";
 type Props = {};
 
 const Itinerary = (props: Props) => {
+  
   const { ref } = useSectionInView("#itinerary", 0.5);
+
   return (
     <section
       ref={ref}
