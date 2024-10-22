@@ -14,19 +14,7 @@ const Blessing = (props: Props) => {
       className="mb-28 max-w-[74rem] text-center sm:mb-0"
     >
       <div className="flex items-center justify-center">
-        <div>
-          <div>
-            <Image
-              src="/blessing.jpg"
-              width="480"
-              height="480"
-              alt="photo"
-              quality="100"
-              priority={true}
-               className="shadow-xl object-cover"
-            />
-          </div>
-        </div>
+        <p className="text-2xl">Blessing</p>
       </div>
     </section>
   );

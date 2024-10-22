@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import { p } from "framer-motion/client";
 
 type Props = {};
 
@@ -59,7 +58,6 @@ function Map({}: Props) {
         }
       });
     };
-
     initMap();
   }, []);
 
