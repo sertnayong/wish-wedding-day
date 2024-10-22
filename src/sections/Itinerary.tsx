@@ -3,11 +3,12 @@
 import { useSectionInView } from "@/lib/useInView";
 import React from "react";
 import Image from "next/image";
+import WiddingTheme from "@/components/widdingTheme";
+import Gift from "@/components/gift";
 
 type Props = {};
 
 const Itinerary = (props: Props) => {
-  
   const { ref } = useSectionInView("#itinerary", 0.5);
 
   return (
@@ -30,6 +31,12 @@ const Itinerary = (props: Props) => {
             />
           </div>
         </div>
+      </div>
+      <div>
+        <WiddingTheme />
+      </div>
+      <div>
+        <Gift/>
       </div>
     </section>
   );

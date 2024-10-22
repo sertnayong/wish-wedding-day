@@ -15,7 +15,7 @@ const config: Config = {
       },
       
       fontFamily: {
-        hurricane: [`var(--font-hurricane)`,`sans-serif`],
+        hurricane: [`var(--font-mali)`,`sans-serif`],
       },
     },
   },

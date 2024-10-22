@@ -1,9 +1,7 @@
 import Blessing from "@/sections/blessing";
-import Intro from "@/sections/intro";
 import Invitations from "@/sections/invitations";
 import Itinerary from "@/sections/Itinerary";
 import Venue from "@/sections/venue";
-import Image from "next/image";
 
 export default function Home() {
   return (

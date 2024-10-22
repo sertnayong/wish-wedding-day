@@ -25,8 +25,11 @@ const Invitations = (props: Props) => {
               className="shadow-xl object-cover"
             />
           </div>
+
+
         </div>
       </div>
+
     </section>
   );
 };

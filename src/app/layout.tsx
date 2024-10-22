@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Hurricane } from "next/font/google";
+import { Mali } from "next/font/google";
 import "./globals.css";
 import Providers from "@/containers/providers";
 import Navbar from "@/components/navbar";
-import ThemeSwitch from "@/components/theme-controller";
 
 
-const hurricane = Hurricane({
+const mali = Mali({
   subsets: ["latin"],
-  variable: "--font-hurricane",
+  variable: "--font-mali",
   weight: ["400"],
 });
 
@@ -25,25 +24,22 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${hurricane.variable} font-hurricane flex flex-col bg-gray-50
-       text-gray-950 relative dark:bg-gray-950 dark:text-gray-50 
-       dark:text-opacity-90 antialiased`}
+        className={`${mali.variable} font-hurricane flex flex-col bg-gray-50
+       text-gray-950 relative`}
       >
         <div
           className="bg-[#adeff6] absolute top-[-6rem] flex-1 -z-[10] right-[11rem] h-[31.25rem] w-[31.25rem] 
-        rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]`"
+        rounded-full blur-[10rem] sm:w-[68.75rem]`"
         />
 
         <div
           className="bg-[#8474ff] absolute top-[-1rem] -z-[10] flex-1 left-[-35rem] h-[31.25rem] w-[50rem] 
         rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]
-        dark:bg-[#976394]`"
+        `"
         />
         <Providers>
           <Navbar />
-          
           {children}
-          {/* <ThemeSwitch/> */}
         </Providers>
       </body>
     </html>
