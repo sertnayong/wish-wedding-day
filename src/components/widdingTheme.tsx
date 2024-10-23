@@ -1,34 +1,56 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 type Props = {}
 
 const WeddingTheme = (props: Props) => {
+    // Framer Motion Animation Controls
+    const controls = useAnimation();
+    const { ref, inView } = useInView({
+        threshold: 0.2, // Adjust when the animation should trigger (20% in view)
+    });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start({ x: 0, opacity: 1 });
+        } else {
+            controls.start({ x: 100, opacity: 0 });
+        }
+    }, [controls, inView]);
+
     return (
         <>
-            <div className='h-[180px] w-full bg-gradient-to-r from-cyan-700 via-teal-400 to-emerald-500 rounded-bl-[50px] rounded-tr-[50px] mt-8 shadow-xl relative overflow-hidden'>
+            <motion.div
+                ref={ref}
+                animate={controls}
+                initial={{ x: 100, opacity: 0 }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+                className='h-[180px] sm:h-[140px] w-full bg-gradient-to-r from-cyan-700 via-teal-400 to-emerald-500 rounded-bl-[50px] rounded-bl-[30px] mt-8 shadow-xl relative overflow-hidden'
+            >
                 {/* Decorative Border Glow */}
                 <div className='absolute inset-0 rounded-bl-[50px] rounded-tr-[50px] bg-gradient-to-r from-cyan-300 via-white to-emerald-300 opacity-20 blur-[100px]' />
 
                 {/* Background message */}
-                <p className='absolute inset-0 flex items-center justify-center text-8xl text-white font-extrabold opacity-10 drop-shadow-[0_5px_5px_rgba(0,0,0,0.2)]'>
+                <p className='absolute inset-0 flex items-center justify-center text-8xl sm:text-8xl text-white font-extrabold opacity-10 drop-shadow-[0_5px_5px_rgba(0,0,0,0.2)]'>
                     THEME
                 </p>
 
                 {/* Content */}
                 <div className='relative z-10'>
-                    <div className='flex items-center justify-end'>
-                        <p className='text-5xl text-white font-bold p-6 shadow-lg transition duration-500 ease-in-out transform hover:scale-110 hover:text-yellow-300'>
+                    <div className='flex items-center justify-end p-2'>
+                        <p className='text-2xl sm:text-2xl text-white font-extrabold'>
                             THEME
                         </p>
                     </div>
                 </div>
 
                 {/* Additional Decoration */}
-                <div className='absolute top-0 right-0 bg-gradient-to-br from-white/40 to-transparent rounded-full h-[200px] w-[200px] blur-xl opacity-30'></div>
-                <div className='absolute bottom-0 left-0 bg-gradient-to-tl from-white/40 to-transparent rounded-full h-[150px] w-[150px] blur-xl opacity-30'></div>
-            </div>
+                <div className='absolute top-0 right-0 bg-gradient-to-br from-white/40 to-transparent rounded-full h-[200px] sm:h-[150px] w-[200px] sm:w-[150px] blur-xl opacity-30'></div>
+                <div className='absolute bottom-0 left-0 bg-gradient-to-tl from-white/40 to-transparent rounded-full h-[150px] sm:h-[100px] w-[150px] sm:w-[100px] blur-xl opacity-30'></div>
+            </motion.div>
         </>
-    )
+    );
 }
 
 export default WeddingTheme;

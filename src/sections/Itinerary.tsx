@@ -5,6 +5,9 @@ import React from "react";
 import Image from "next/image";
 import WiddingTheme from "@/components/widdingTheme";
 import Gift from "@/components/gift";
+import Event from "@/components/event";
+import WiddingCard2 from "@/components/widdingCard2";
+import WiddingCard1 from "@/components/widdingCard1";
 
 type Props = {};
 
@@ -17,20 +20,14 @@ const Itinerary = (props: Props) => {
       id="itinerary"
       className="mb-28 max-w-[74rem] text-center sm:mb-0"
     >
-      <div className="flex items-center justify-center">
-        <div>
-          <div>
-            <Image
-              src="/itinerary.jpg"
-              width="480"
-              height="480"
-              alt="photo"
-              quality="100"
-              priority={true}
-              className="shadow-xl object-cover"
-            />
-          </div>
-        </div>
+       <div>
+       <WiddingCard1/>
+      </div> 
+      <div>
+       <WiddingCard2/>
+      </div> 
+      <div>
+        <Event/>
       </div>
       <div>
         <WiddingTheme />
