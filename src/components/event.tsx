@@ -25,17 +25,17 @@ const Event = (props: Props) => {
                 animate={controls}
                 initial={{ y: 100, opacity: 0 }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
-                className='h-[200px] sm:h-[120px] w-full bg-gradient-to-t from-sky-200 to-sky-800 rounded-xl mt-8 shadow-xl relative overflow-hidden'
+                className='flex flex-col h-auto w-full bg-gradient-to-t from-sky-500 to-sky-800 rounded-xl mt-8 shadow-xl relative overflow-hidden'
             >
-                <div>
-                    <p className='text-xl justify-center items-center text-start pl-5 pt-5 text-white font-extrabold'>EVENT</p>
-                </div>
-                <div className="flex justify-center items-center h-[3px] w-[100%] rounded-md bg-gray-200"/>
-                <div>
-                    <p className='text-sm justify-center items-center text-start pl-5 pt-5 text-white font-extrabold'>08:00 พิธีแห่ขันหมาก</p>
-                    <p className='text-sm justify-center items-center text-start pl-5 pt-5 text-white font-extrabold'>08:29 พิธีหมั้น</p>
-
-                    <p className='text-sm justify-center items-center text-start pl-5 pt-5 text-white font-extrabold'>11:00 รับประทานอาหารเที่ยง</p>
+                    <p className='text-xl justify-center items-center text-start pl-5 pt-5 pb-2 text-white font-extrabold'>EVENT</p>
+                    <div className='pr-5 pl-5'>
+                             <div className="flex justify-center items-center h-[2px] w-[100%] rounded-md bg-gray-200"/>
+                    </div>
+           
+                <div className='flex flex-col text-white text-lg justify-start items-start p-5'>
+                    <p>08:00 พิธีแห่ขันหมาก</p>
+                    <p> 08:29 พิธีหมั้น</p>
+                    <p> 11:00 รับประทานอาหารเที่ยง</p>
 
                 </div>
             </motion.div>

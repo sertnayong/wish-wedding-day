@@ -18,8 +18,9 @@ const Itinerary = (props: Props) => {
     <section
       ref={ref}
       id="itinerary"
-      className="mb-28 max-w-[74rem] text-center sm:mb-0"
+      className="mb-4 max-w-[74rem] text-center sm:mb-0"
     >
+      <div className="">
        <div>
        <WiddingCard1/>
       </div> 
@@ -34,6 +35,7 @@ const Itinerary = (props: Props) => {
       </div>
       <div>
         <Gift/>
+      </div>
       </div>
     </section>
   );

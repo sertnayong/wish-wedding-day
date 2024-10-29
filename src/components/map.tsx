@@ -63,10 +63,13 @@ function Map({}: Props) {
 
   return (
     <>
-      <p className="text-3xl justify-start p-2">Location.</p>
-      <div className="map-container mt-3">
+    <div className="flex flex-col justify-center items-end bg-gradient-to-r from-sky-200 to-sky-800">
+    <p className="text-2xl justify-start p-2 pr-4 font-extrabold text-white">Location.</p>
+      <div className="map-container mt-3 p-2">
         <div ref={mapRef} className="map" />
       </div>
+    </div>
+     
     </>
   );
 }

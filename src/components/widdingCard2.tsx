@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import Image from "next/image";
 type Props = {};
 
 const WeddingCard2 = (props: Props) => {
@@ -32,71 +32,61 @@ const WeddingCard2 = (props: Props) => {
   return (
     <motion.div
       ref={ref}
-      className='h-auto w-full bg-white rounded-xl mt-8 shadow-xl p-8 relative overflow-hidden'
+      //className='h-auto w-full bg-white rounded-t-full mt-8 shadow-xl p-8 relative overflow-hidden'
+      className='h-auto w-full mt-8 shadow-xl relative overflow-hidden'
       variants={containerVariants}
       initial="hidden"
       animate={controls}
     >
       {/* Invitation Heading */}
-      <motion.div className='text-center space-y-6'>
+
+      {/* <motion.div className='text-center'>
         <motion.p
-          className='text-4xl font-extrabold text-sky-800'
+          className='text-lg text-sky-800 mt-5'
           variants={textVariants}
           custom={0.1}
         >
-          TOGETHER
-        </motion.p>
-        <motion.p
-          className='text-xl font-light'
-          variants={textVariants}
-          custom={0.2}
-        >
+          TOGETHER <br/>
           WITH THEIR FAMILIES
         </motion.p>
-
-        {/* Couple Names */}
+  
         <motion.p
-          className='text-4xl font-bold text-sky-800'
+          className='text-4xl font-bold text-sky-800 mt-10'
           variants={textVariants}
           custom={0.3}
         >
-          Sert & Tan
+         <span className='text-sky-500 text-5xl'>Prasert</span>  <br/> <div className='mt-4'><span className='text-sm text-sky-500'>and</span> <span className='text-sky-500 text-5xl'>Charuwan</span> </div>
         </motion.p>
-
-        {/* Invitation Message */}
         <motion.p
-          className='text-[18px] font-light'
+          className='text-[14px] font-light text-sky-800 mt-10'
           variants={textVariants}
-          custom={0.4}
+          custom={0.2}
         >
-          THEY REQUEST THE HONOR OF <br />
+         WE INVITE THEY REQUEST THE HONOR OF <br />
           YOUR PRESENCE AT <br />
           THE WEDDING RECEPTION OF
         </motion.p>
-
-        {/* Event Date */}
         <motion.p
-          className='text-4xl font-extrabold text-sky-800'
+          className='text-2xl font-extrabold text-sky-800 mt-5'
           variants={textVariants}
           custom={0.5}
         >
           23 • 12 • 24
         </motion.p>
-
-        {/* Optional: Image Placeholder for E-Card */}
-        {/* Uncomment and use if needed */}
-        {/* <motion.div
-          className='w-full h-[200px] bg-gray-200 rounded-lg flex items-center justify-center'
-          variants={textVariants}
-          custom={0.6}
-        >
-          <img
-            src='ecard/75/i2n2kp.png'
-            alt='Wedding E-Card'
-            className='w-full h-full object-cover rounded-lg'
+      </motion.div> */}
+       <div className="flex items-center justify-center">
+          <Image
+            src="/itinerary.png"
+            width={480}
+            height={480}
+            alt="Invitation photo"
+            quality={100}
+            priority
+            className="object-cover rounded-lg shadow-lg"
           />
-        </motion.div> */}
-      </motion.div>
+    
+      </div>
+      
     </motion.div>
   );
 };

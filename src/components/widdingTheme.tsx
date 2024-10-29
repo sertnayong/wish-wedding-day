@@ -38,10 +38,14 @@ const WeddingTheme = (props: Props) => {
 
                 {/* Content */}
                 <div className='relative z-10'>
-                    <div className='flex items-center justify-end p-2'>
+                    <div className='flex items-center justify-end pt-5 pr-5 pb-'>
                         <p className='text-2xl sm:text-2xl text-white font-extrabold'>
                             THEME
                         </p>
+                        
+                    </div>
+                    <div className='pr-5 pl-20'>
+                             <div className="flex justify-center items-center h-[2px] w-[100%] rounded-md bg-gray-200"/>
                     </div>
                 </div>
 

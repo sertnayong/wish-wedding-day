@@ -9,7 +9,6 @@ export const links: Link[] = [
     nameEng: "Itinerary",
     hash: "#itinerary",
 },
-
 {
     nameEng: "Blessing",
     hash: "#blessing",
